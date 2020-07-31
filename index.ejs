@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu-items ib" id="File">File</div>
+        <div class="menu-items ib" id="Home">Home</div>
+    </div>
+    <div class="menu-options">
+        <div class="menu-options-item-file" id="File-options">
+            <div class="mouse" id="New"><i class="fa fa-file" aria-hidden="true"></i>  New</div>
+            <div class="mouse" id="Open"><i class="fa fa-folder-open" aria-hidden="true"></i>  Open</div>
+            <div class="mouse" id="Save"><i class="fa fa-floppy-o" aria-hidden="true"></i>  Save</div>
+        </div>
+        <div class="menu-options-item" id="Home-options">
+            <div class="menu-group-1">
+                <div class="menu-row-1">
+                    <select name="" id="font-family">
+                        <option value="Arial" selected>Arial</option>
+                        <option value="Cambria">Cambria</option>
+                        <option value="Courier">Courier</option>
+                        <option value="Charcole">Charcole</option>
+                        <option value="cursive">cursive</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Lucida Console">Lucida Console</option>
+                        <option value="monospace">monospace</option>
+                        <option value="sans-serif">sans-serif</option>
+                        <option value="sans">sans</option>
+                        <option value="serif">serif</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                    </select>
+                    <select name="" id="font-size">
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="12" selected>12</option>
+                        <option value="14">14</option>
+                        <option value="16">16</option>
+                        <option value="18">18</option>
+                        <option value="20">20</option>
+                        <option value="22">22</option>
+                        <option value="26">26</option>
+                        <option value="28">28</option>
+                        <option value="32">32</option>
+                        <option value="36">36</option>
+                        <option value="40">40</option>
+                    </select>
+                </div>
+                <div class="menu-row-2">
+                    <div id="bold" class="mouse hov"><i class="fa fa-bold" aria-hidden="true"></i></div>
+                    <div id="underline" class="mouse hov"><i class="fa fa-underline" aria-hidden="true"></i></div>
+                    <div id="italic" class="mouse hov"><i class="fa fa-italic" aria-hidden="true"></i></div>
+                </div>
+                <div class="menu-row-3">
+                    <div class="text-color"><i class="fa fa-font" aria-hidden="true"></i></div> 
+                    <div class="bg-color"><i class="fa fa-paint-brush" aria-hidden="true"></i></div>
+                </div>
+                <div class="menu-row-4">
+                    <input type="color" name="text-color" id="text-color" value="#000000">
+                    <input type="color" name="bg-color" id="bg-color" value="#FFFFFF">
+                </div>
+                <span id="font-group">Font</span>
+            </div>
+            <div class="menu-group-3">
+                <div class="menu-row">
+                    <div id="left"class="mouse hov align"><i class="fa fa-align-left" aria-hidden="true"></i></div>
+                    <div id="center" class="mouse hov align"><i class="fa fa-align-center" aria-hidden="true"></i></div>
+                    <div id="right" class="mouse hov align"><i class="fa fa-align-right" aria-hidden="true"></i></div>
+                </div>
+                <span id=align-group>Alignment</span>
+            </div>
+            <div class="menu-group-4">
+                <div class="menu-row">
+                    <div id="cut" class="mouse hov clip"><i class="fa fa-cut">cut</i></div>
+                    <div id="copy" class="mouse hov clip"><i class="fa fa-copy">copy</i></div>
+                    <div id="paste" class="mouse hov clip"><i class="fa fa-paste">paste</i></div>
+                </div>
+                <span class="clipboard">Clipboard</span>
+            </div>
+        </div>
+    </div>
+    <div class="formula-bar">
+        <input type="text" id="address-container">
+        <i class="fa fa-calculator" aria-hidden="true"></i>
+        <input type="text" id="formula-container">
+    </div>
+    <div class="cell-container" id="cell-container">
+        <div class="top-left-cell" id="top-left-cell">
+
+        </div>
+        <div class="top-row" id="top-row">
+            <%for(let j=0;j<cols;j++){%>
+                <div class="cell" id="cell">
+                    <%=String.fromCharCode(65+j)%>
+                </div>
+            <%}%>
+        </div>
+        <div class="left-col" id="left-col">
+            <%for(let i=1;i<=rows;i++){%>
+                <div class="cell" id="cell">
+                    <%=i%>
+                </div>
+            <%}%>
+        </div>
+        <div class="grid" id="grid">
+            <%for(let i=0;i<rows;i++){%>
+                <div class="row">
+                    <%for(let j=0;j<cols;j++){%>
+                        <div class="cell" contenteditable="true" row-id=<%=i%> col-id=<%=j%> >
+                        </div>
+                    <%}%>
+                </div>
+                <%}%>
+        </div>
+    </div>
+    <div class="sheets">Sheets</div>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+html,body{
+    padding: 0px;
+    margin: 0px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    }
+    *{
+        box-sizing: border-box;
+    }
+    /* menu-bar */
+    .menu {
+        height: 34px;
+        border: 1px;
+        background-color: #087206b9;
+        color: white;
+    }
+    .menu-options {
+        height: 103px;
+        border: 1px;
+        background-color: #d3d3d375;
+    }
+    .sheets {
+        height: 20px;
+        border: 1px;
+        background-color:#d6d6d6e6;
+    }
+    .formula-bar {
+    height: 42px;
+    border: 1px;
+    border-top: 1px solid gray;
+    background-color: #d6d6d6e6;
+    display: flex;
+    align-items: center;
+    }
+    input#address-container {
+        width: 82px;
+        margin-right: 15px;
+        height: 80%;
+        justify-content: space-evenly;
+        margin-left: 7px;
+    }
+    input#formula-container {
+        width: calc(97vw - 102px);
+        height: 80%;
+        margin-left: 7px;
+    }
+    .cell-container {
+        height: calc(100vh - 199px);
+        overflow: auto;
+        position: relative;
+    }
+    .top-left-cell{
+        height: 25px;
+        width: 30px;
+        background-color:darkgray;
+        position: absolute;
+        z-index: 3;
+    }
+    .top-row{
+        display: flex;
+        position: absolute;
+        left: 30px;
+        top: 0px;
+        height: 25px;
+        text-align: center;
+        background-color:#d6d6d6e6;
+        z-index: 2;
+    }
+    .top-row>.cell{
+        min-width: 87px;
+        border: 1px solid;
+    }
+    .left-col{
+        position: absolute;
+        top: 25px;
+        background-color: #d6d6d6e6;
+        z-index: 2;
+    }
+    .left-col>.cell{
+        width: 30px;
+        height: 25px;
+        border: 1px solid;
+    }
+    .highlighted{
+        background-color: darkgray;
+        border: 1px solid;
+    }
+    .grid{
+        position: absolute;
+        top:25px;
+        left: 30px;
+        z-index: 1;
+    }
+    .row{
+        display: flex;
+    }
+    .row>.cell{
+        min-height: 25px;
+        border: 1px solid #d6d6d6cf;
+        min-width: 87px;
+        max-width: 50px;
+    }
+    .ib{
+        display: inline-block;
+        cursor:default;
+    }
+    .menu-items{
+        text-align: center;
+        width: 45px;
+        margin-top: 6px;
+        height: 28px;
+    }
+    #Home-options{
+        display: flex;
+    }
+    .menu-options-item-file{
+        display: none;
+    }
+    /* home bar */
+    .menu-group-1 {
+        height: 103px;
+        width: 220px;
+        padding: 2px;
+        margin-left: 10px;
+        position: relative;
+        border-right: 1px solid darkgray;
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+    }
+    select {
+        margin-top: 4px;
+    }
+    span#font-group {
+        position: absolute;
+        top: 84px;
+        left: 81px;
+        font-size: 12px;
+    }
+    .menu-group-1>.menu-row-1 {
+        display: flex;
+    }
+    .menu-group-1>.menu-row-2{
+        margin-left: 35px;
+    margin-top: -3px;
+    display: flex;
+    }
+    .menu-group-1>.menu-row-3{
+        display: flex;
+        margin: -8px;
+    }
+    .menu-group-1>.menu-row-4{
+        display: flex;
+        margin: 8px;
+    }
+    input[type="color"] {
+        width: 48px;
+    margin-right: -9px;
+    margin-left: 32px;
+    height: 17px;
+    }
+    #font-size {
+        width: 53px;
+        margin-left: 8px;
+    }
+    .hov.selected{
+        background-color: darkgray;
+    }
+    .ib:hover{
+        background-color:#125d07;
+        color: white;
+    }
+    input[type="text"] {
+        background-color: white;
+        border: 1.5px solid black;
+    }
+    #bold {
+        width: 27px;
+        height: 27px;
+        text-align: center;
+        margin-top: 2px;
+        margin-left: 15px;
+        margin-bottom: 3px;
+    }
+    #underline {
+        font-weight: bold;
+        width: 27px;
+        height: 27px;
+        text-align: center;
+        margin-top: 2px;
+        margin-left: 13px;
+    }
+    #italic {
+        width: 27px;
+        height: 27px;
+        text-align: center;
+        margin-left: 13px;
+        margin-top: 2px;
+    }
+    .text-color {
+        width: 58px;
+    margin-left: 64px;
+    }
+    .bg-color {
+        margin-left: 17px;
+    }
+    button.delete-row {
+        height: 23px;
+    }
+    button.insert-row {
+        width: 99px;
+        height: 23px;
+        margin-top: 4px;
+    }
+    button.insert-col {
+        width: 118px;
+        margin-top: 4px;
+        height: 23px;
+    }
+    button.delete-col {
+        height: 23px;
+    }
+    .hov:hover{
+        background-color:darkgray;
+    }
+    .menu-group-3 {
+        width: 118px;
+        border-right: 1px solid darkgray;
+        position: relative;
+    }
+    .menu-group-3>.menu-row {
+        display: flex;
+        margin-top: 25px;
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+    .align{
+        width: 27px;
+        height: 27px;
+        text-align: center;
+    }
+    span#align-group {
+        position: absolute;
+        left: 25px;
+        top: 84px;
+        font-size: 12px;
+    }
+    .menu-group-4 {
+        position: relative;
+        width: 111px;
+        height: 103px;
+        border-right: 1px solid darkgray;
+    }
+    .menu-group-4>.menu-row {
+        margin-left: 31px;
+        margin-top: 5px;
+    }
+    .clip{
+        height: 27px;
+        width: 27px;
+        text-align: center;
+    }
+    span.clipboard {
+        position: absolute;
+        font-size: 12px;
+        top: 84px;
+        left: 30px;
+    }
+    .mouse{
+        cursor: pointer;
+    }
+    /* file options */
+    .file-selected{
+        display: block;
+        height: 103px;
+        background-color: #078d47;
+        width: 108px;
+        position: relative;
+    }
+    div#New {
+        position: absolute;
+        top: 9px;
+        left: 20px;
+        color: white;
+    }
+    div#Open {
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        color: white;
+    }
+    div#Save {
+        position: absolute;
+        top: 68px;
+        left: 20px;
+        color: white;
+    }
+    .home-shift{
+        position: absolute;
+        top: 34px;
+        left: 100px;
+        margin-left: 10px;
+    }
